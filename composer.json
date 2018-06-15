@@ -22,6 +22,14 @@
       "MLL\\GraphQLPlayground\\": "src"
     }
   },
+  "scripts": {
+    "style": [
+      "php-cs-fixer fix"
+    ],
+    "ci": [
+      "php-cs-fixer fix --dry-run --diff"
+    ]
+  },
   "minimum-stability": "dev",
   "prefer-stable": true,
   "extra": {
@@ -30,5 +38,8 @@
             "MLL\\GraphQLPlayground\\GraphQLPlaygroundServiceProvider"
         ]
     }
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^2.12"
   }
 }
