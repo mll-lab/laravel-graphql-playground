@@ -7,7 +7,7 @@ use Illuminate\Support\ServiceProvider;
 class GraphQLPlaygroundServiceProvider extends ServiceProvider
 {
     const CONFIG_PATH = __DIR__ . '/../config/graphql-playground.php';
-    const VIEW_PATH = __DIR__ . '/../resources/views';
+    const VIEW_PATH = __DIR__ . '/../views';
 
     /**
      * Perform post-registration booting of services.
