@@ -2,5 +2,8 @@
 
 return [
     // Route for the frontend
-    'frontend' => 'graphql-playground',
+    'route' => 'graphql-playground',
+
+    // Route for the GraphQL endpoint
+    'endpoint' => 'graphql',
 ];
