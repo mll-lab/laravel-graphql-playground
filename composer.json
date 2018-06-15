@@ -1,0 +1,34 @@
+{
+  "name": "mll-lab/laravel-graphql-playground",
+  "description": "Easily integrate GraphQL Playground into your Laravel project",
+  "keywords": [
+    "laravel",
+    "graphql",
+    "graphql-playground"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Benedikt Franke",
+      "email": "benedikt@franke.tech"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.9",
+    "laravel/framework": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "MLL\\GraphQLPlayground\\": "src"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "laravel": {
+        "providers": [
+            "MLL\\GraphQLPlayground\\GraphQLPlaygroundServiceProvider"
+        ]
+    }
+  }
+}
