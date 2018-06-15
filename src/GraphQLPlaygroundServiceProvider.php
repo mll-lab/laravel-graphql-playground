@@ -1,6 +1,6 @@
 <?php
 
-namespace GraphQLPlaygroundServiceProvider;
+namespace MLL\GraphQLPlaygroundServiceProvider;
 
 use GraphQLPlayground\Console\PublishCommand;
 use Illuminate\Support\ServiceProvider;
