@@ -6,7 +6,7 @@ use Illuminate\Support\ServiceProvider;
 
 class GraphQLPlaygroundServiceProvider extends ServiceProvider
 {
-    const CONFIG_PATH = __DIR__ . '/../config/grapqhl-playground.php';
+    const CONFIG_PATH = __DIR__ . '/../config/graphql-playground.php';
     const VIEW_PATH = __DIR__ . '/../resources/views';
 
     /**
@@ -16,7 +16,7 @@ class GraphQLPlaygroundServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(self::VIEW_PATH, 'graphiql');
+        $this->loadViewsFrom(self::VIEW_PATH, 'graphql-playground');
 
         $this->publishes([
             self::CONFIG_PATH => config_path('graphql-playground.php'),
