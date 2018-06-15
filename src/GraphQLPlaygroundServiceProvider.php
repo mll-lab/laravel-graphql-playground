@@ -1,6 +1,6 @@
 <?php
 
-namespace MLL\GraphQLPlaygroundServiceProvider;
+namespace MLL\GraphQLPlayground;
 
 use Illuminate\Support\ServiceProvider;
 
