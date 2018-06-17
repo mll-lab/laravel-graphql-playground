@@ -1,6 +1,10 @@
 # Laravel GraphQL Playground
 
-Easily integrate [GraphQL Playground](https://github.com/prismagraphql/graphql-playground) into your Laravel projects
+Easily integrate [GraphQL Playground](https://github.com/prismagraphql/graphql-playground) into your Laravel projects.
+
+[![](https://i.imgur.com/AE5W6OW.png)](https://www.graphqlbin.com/RVIn)
+
+> **Please note**: This is not a full GraphQL Server implementation, only a UI for testing your implementation. For the server component we recommend [nuwave/lighthouse](https://github.com/nuwave/lighthouse).
 
 ## Installation
 
