@@ -2,6 +2,10 @@
 
 Easily integrate [GraphQL Playground](https://github.com/prismagraphql/graphql-playground) into your Laravel projects.
 
+[![GitHub license](https://img.shields.io/github/license/mll-lab/laravel-graphql-playground.svg)](https://github.com/mll-lab/laravel-graphql-playground/blob/master/LICENSE)
+[![Packagist](https://img.shields.io/packagist/v/mll-lab/laravel-graphql-playground.svg)](https://packagist.org/packages/mll-lab/laravel-graphql-playground)
+[![Packagist](https://img.shields.io/packagist/dt/mll-lab/laravel-graphql-playground.svg)](https://packagist.org/packages/mll-lab/laravel-graphql-playground)
+
 [![](https://i.imgur.com/AE5W6OW.png)](https://www.graphqlbin.com/RVIn)
 
 > **Please note**: This is not a full GraphQL Server implementation, only a UI for testing your implementation. For the server component we recommend [nuwave/lighthouse](https://github.com/nuwave/lighthouse).
@@ -27,4 +31,5 @@ You may publish the configuration and/or the views:
 
 By default, the playground is reachable at `/graphql-playground`
 
-It points to the endpoint `/graphql`
+It assumes a running GraphQL endpoint at `/graphql`. You can enter another URL in the
+UI or change the default setting in the configuration file.
