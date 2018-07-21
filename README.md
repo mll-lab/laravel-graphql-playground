@@ -25,7 +25,7 @@ If you are using Laravel < 5.4, add the service provider to your `config/app.php
 
 You may publish the configuration and/or the views:
 
-    php artisan vendor:publish
+    php artisan vendor:publish --provider="MLL\GraphQLPlayground\GraphQLPlaygroundServiceProvider"
 
 ## Usage
 
@@ -33,3 +33,10 @@ By default, the playground is reachable at `/graphql-playground`
 
 It assumes a running GraphQL endpoint at `/graphql`. You can enter another URL in the
 UI or change the default setting in the configuration file.
+
+## Security
+
+For security reasons you might want to:
+- disable this is production completely (see `enabled` configuration)
+  or
+- apply a custom middleware protecting the route (see `middleware` configuration)
