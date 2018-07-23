@@ -16,16 +16,16 @@ Easily integrate [GraphQL Playground](https://github.com/prismagraphql/graphql-p
 
 If you are using Laravel < 5.4, add the service provider to your `config/app.php`
 
-````php
+```php
 'providers' => [
     // Other providers...
     MLL\\GraphQLPlayground\\GraphQLPlaygroundServiceProvider::class,
 ]
-````
+```
 
 You may publish the configuration and/or the views:
 
-    php artisan vendor:publish
+    php artisan vendor:publish --provider="MLL\GraphQLPlayground\GraphQLPlaygroundServiceProvider"
 
 ## Usage
 
@@ -33,3 +33,11 @@ By default, the playground is reachable at `/graphql-playground`
 
 It assumes a running GraphQL endpoint at `/graphql`. You can enter another URL in the
 UI or change the default setting in the configuration file.
+
+## Security
+
+If you do not want to enable the GraphQL playground in production, you can disable it in the config file.
+The easiest way is to set the environment variable `GRAPHQL_PLAYGROUND_ENABLED=false`
+
+If you want to add custom middleware to protect the route to the GraphQL playground, you can
+add it in the configuration file.

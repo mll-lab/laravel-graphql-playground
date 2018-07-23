@@ -26,9 +26,17 @@ class GraphQLPlaygroundServiceProvider extends ServiceProvider
             self::VIEW_PATH => resource_path('views/vendor/graphql-playground'),
         ], 'views');
 
-        \Route::get(config('graphql-playground.route'), function () {
-            return view('graphql-playground::index');
-        });
+        if (!config('graphql-playground.enabled', true)) {
+            return;
+        }
+
+        \Route::get(config('graphql-playground.route'), [
+            'middleware' => config('graphql-playground.middleware', ''),
+            'as' => 'graphql-playgroundcontroller',
+            'uses' => function () {
+                return view('graphql-playground::index');
+            },
+        ]);
     }
 
     /**
