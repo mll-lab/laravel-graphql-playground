@@ -47,5 +47,11 @@ class GraphQLPlaygroundServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(self::CONFIG_PATH, 'graphql-playground');
+    
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                \MLL\GraphQLPlayground\DownloadAssetsCommand::class,
+            ]);
+        }
     }
 }

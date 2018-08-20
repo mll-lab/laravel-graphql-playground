@@ -34,6 +34,15 @@ By default, the playground is reachable at `/graphql-playground`
 It assumes a running GraphQL endpoint at `/graphql`. You can enter another URL in the
 UI or change the default setting in the configuration file.
 
+### Local assets
+
+If you want to serve the assets from your own server, you can download them with the command
+
+    php artisan graphql-playground:download-assets
+
+This puts the necessary CSS, JS and Favicon into your `public` directory. If you have
+the assets downloaded, they will be used instead of the online version from the CDN.
+
 ## Security
 
 If you do not want to enable the GraphQL playground in production, you can disable it in the config file.

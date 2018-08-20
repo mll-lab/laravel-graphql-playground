@@ -6,9 +6,29 @@
     <meta charset=utf-8 />
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
     <title>GraphQL Playground</title>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/graphql-playground-react/build/static/css/index.css" />
-    <link rel="shortcut icon" href="//cdn.jsdelivr.net/npm/graphql-playground-react/build/favicon.png" />
-    <script src="//cdn.jsdelivr.net/npm/graphql-playground-react/build/static/js/middleware.js"></script>
+
+    <link rel="stylesheet"
+          href="{{
+            file_exists(public_path(\MLL\GraphQLPlayground\DownloadAssetsCommand::CSS_PATH_LOCAL))
+            ? asset(\MLL\GraphQLPlayground\DownloadAssetsCommand::CSS_PATH_LOCAL)
+            : \MLL\GraphQLPlayground\DownloadAssetsCommand::CSS_PATH_CDN
+          }}"
+    />
+
+    <link rel="shortcut icon"
+          href="{{
+            file_exists(public_path(\MLL\GraphQLPlayground\DownloadAssetsCommand::FAVICON_PATH_LOCAL))
+            ? asset(\MLL\GraphQLPlayground\DownloadAssetsCommand::FAVICON_PATH_LOCAL)
+            : \MLL\GraphQLPlayground\DownloadAssetsCommand::FAVICON_PATH_CDN
+          }}"
+    />
+
+    <script src="{{
+                file_exists(public_path(\MLL\GraphQLPlayground\DownloadAssetsCommand::JS_PATH_LOCAL))
+                ? asset(\MLL\GraphQLPlayground\DownloadAssetsCommand::JS_PATH_LOCAL)
+                : \MLL\GraphQLPlayground\DownloadAssetsCommand::JS_PATH_CDN
+            }}"
+    ></script>
 
 </head>
 
