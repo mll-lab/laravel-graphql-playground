@@ -32,16 +32,16 @@ class DownloadAssetsCommand extends Command
         );
     }
     
-    protected function fileForceContents(string $dir, string $contents)
+    protected function fileForceContents(string $path, string $contents)
     {
-        $parts = explode('/', $dir);
+        $parts = explode('/', $path);
         $file = array_pop($parts);
-        $dir = '';
+        $path = '';
         foreach ($parts as $part) {
-            if (!is_dir($dir .= "/$part")) {
-                mkdir($dir);
+            if (!is_dir($path .= "/$part")) {
+                mkdir($path);
             }
         }
-        file_put_contents("$dir/$file", $contents);
+        file_put_contents("$path/$file", $contents);
     }
 }
