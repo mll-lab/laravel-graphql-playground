@@ -34,21 +34,14 @@ class DownloadAssetsCommand extends Command
     
     protected function fileForceContents(string $filePath, string $contents)
     {
-        // Split by directory, e.g. /foo/bar -> ["foo", "bar"]
-        $parts = explode(DIRECTORY_SEPARATOR, $filePath);
-        // Last one is the actual filename
-        $fileName = array_pop($parts);
-        
-        // Start at the root directory
-        $path = '';
-        foreach ($parts as $part) {
-            if (!is_dir($path .= DIRECTORY_SEPARATOR . $part)) {
-                mkdir($path);
-            }
+        // Ensure the directory exists
+        $directory = dirname($filePath);
+        if(! is_dir($directory)){
+            mkdir($directory, 0777, true);
         }
         
         file_put_contents(
-            $path . DIRECTORY_SEPARATOR . $fileName,
+            $filePath,
             $contents
         );
     }
