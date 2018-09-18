@@ -33,7 +33,9 @@ class GraphQLPlaygroundServiceProvider extends ServiceProvider
         \Route::get(
             config('graphql-playground.route'),
             GraphQLPlaygroundController::class . '@get'
-        )->middleware(config('graphql-playground.middleware', ''));
+        )->middleware(
+            config('graphql-playground.middleware')
+        );
     }
 
     /**
