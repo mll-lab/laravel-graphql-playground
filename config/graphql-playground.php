@@ -1,14 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     // Route for the frontend
     'route' => 'graphql-playground',
-    
+
     // Which middleware to apply, if any
     'middleware' => [
         // 'web',
     ],
-    
+
     // Route for the GraphQL endpoint
     'endpoint' => 'graphql',
 

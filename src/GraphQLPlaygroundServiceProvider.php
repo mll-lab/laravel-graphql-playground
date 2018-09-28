@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MLL\GraphQLPlayground;
 
 use Illuminate\Support\ServiceProvider;
 
 class GraphQLPlaygroundServiceProvider extends ServiceProvider
 {
-    const CONFIG_PATH = __DIR__ . '/../config/graphql-playground.php';
-    const VIEW_PATH = __DIR__ . '/../views';
+    const CONFIG_PATH = __DIR__.'/../config/graphql-playground.php';
+    const VIEW_PATH = __DIR__.'/../views';
 
     /**
      * Perform post-registration booting of services.
@@ -32,7 +34,7 @@ class GraphQLPlaygroundServiceProvider extends ServiceProvider
 
         \Route::get(
             config('graphql-playground.route'),
-            GraphQLPlaygroundController::class . '@get'
+            GraphQLPlaygroundController::class.'@get'
         )->middleware(
             config('graphql-playground.middleware')
         )->name('graphql-playground');
@@ -46,7 +48,7 @@ class GraphQLPlaygroundServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(self::CONFIG_PATH, 'graphql-playground');
-    
+
         if ($this->app->runningInConsole()) {
             $this->commands([
                 \MLL\GraphQLPlayground\DownloadAssetsCommand::class,
