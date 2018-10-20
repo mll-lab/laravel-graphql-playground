@@ -9,7 +9,7 @@ Easily integrate [GraphQL Playground](https://github.com/prismagraphql/graphql-p
 
 [![](https://i.imgur.com/AE5W6OW.png)](https://www.graphqlbin.com/RVIn)
 
-> **Please note**: This is not a full GraphQL Server implementation, only a UI for testing your implementation. For the server component we recommend [nuwave/lighthouse](https://github.com/nuwave/lighthouse).
+> **Please note**: This is not a GraphQL Server implementation, only a UI for testing and exploring your schema. For the server component we recommend [nuwave/lighthouse](https://github.com/nuwave/lighthouse).
 
 ## Installation
 
