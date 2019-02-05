@@ -507,7 +507,8 @@
     const root = document.getElementById('root');
     root.classList.add('playgroundIn');
     GraphQLPlayground.init(root, {
-      endpoint: "{{url(config('graphql-playground.endpoint'))}}"
+      endpoint: "{{url(config('graphql-playground.endpoint'))}}",
+      headers: {!! json_encode(config('graphql-playground.headers')) !!}
     })
   })
 </script>

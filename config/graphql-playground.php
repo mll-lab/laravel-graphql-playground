@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 return [
     // Route for the frontend
@@ -10,6 +10,9 @@ return [
     'middleware' => [
         // 'web',
     ],
+
+    // Set default headers
+    'headers' => [],
 
     // Route for the GraphQL endpoint
     'endpoint' => 'graphql',
