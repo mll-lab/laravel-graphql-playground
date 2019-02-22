@@ -29,7 +29,7 @@ return [
     'route' => [
         // 'prefix' => '',
         // 'middleware' => ['web']
-        "domain" => env('GRAPHQL_PLAYGROUND_DOMAIN', null)
+        'domain' => env('GRAPHQL_PLAYGROUND_DOMAIN', null)
     ],
 
     /*
