@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'domain' => env('GRAPHQL_PLAYGROUND_DOMAIN', null),,
+    'domain' => env('GRAPHQL_PLAYGROUND_DOMAIN', null),
 
     /*
     |--------------------------------------------------------------------------
