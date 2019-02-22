@@ -22,27 +22,15 @@ return [
     |
     | Additional configuration for the route group https://lumen.laravel.com/docs/routing#route-groups
     |
+    | For domain config it could be something like:
+    | 'domain' => 'graphql.' . env('APP_DOMAIN', 'localhost'),
     */
 
     'route' => [
         // 'prefix' => '',
         // 'middleware' => ['web']
+        "domain" => env('GRAPHQL_PLAYGROUND_DOMAIN', null)
     ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Domain Name
-    |--------------------------------------------------------------------------
-    |
-    | Here you may specify your domain/subdomain that is going to be used
-    | as GraphQL Playground endpoint.
-    | Could be something like:
-    |
-    | 'domain' => 'graphql.' . env('APP_DOMAIN', 'localhost'),
-    |
-    */
-
-    'domain' => env('GRAPHQL_PLAYGROUND_DOMAIN', null),
 
     /*
     |--------------------------------------------------------------------------
