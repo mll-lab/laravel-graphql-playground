@@ -29,10 +29,39 @@ return [
         // 'middleware' => ['web']
     ],
 
-    // Route for the GraphQL endpoint
+    /*
+    |--------------------------------------------------------------------------
+    | Domain Name
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify your domain/subdomain that is going to be used
+    | as GraphQL Playground endpoint.
+    | Could be something like:
+    |
+    | 'domain' => 'graphql.' . env('APP_DOMAIN', 'localhost'),
+    |
+    */
+
+    'domain' => env('GRAPHQL_PLAYGROUND_DOMAIN', null),,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Route for the GraphQL endpoint
+    |--------------------------------------------------------------------------
+    |
+    */
+
     'endpoint' => 'graphql',
 
-    // Control if the playground is accessible at all
-    // This allows you to disable it completely in production
+    /*
+    |--------------------------------------------------------------------------
+    | Route for the GraphQL endpoint
+    |--------------------------------------------------------------------------
+    |
+    | Control if the playground is accessible at all
+    | This allows you to disable it completely in production
+    |
+    */
+
     'enabled' => env('GRAPHQL_PLAYGROUND_ENABLED', true),
 ];

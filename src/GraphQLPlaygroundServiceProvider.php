@@ -36,7 +36,7 @@ class GraphQLPlaygroundServiceProvider extends ServiceProvider
             \Route::get(
                 config('graphql-playground.route_name', 'graphql-playground'),
                 GraphQLPlaygroundController::class.'@get'
-            )->name('graphql-playground');
+            )->domain(config('graphql-playground.domain', null))->name('graphql-playground');
         });
     }
 
