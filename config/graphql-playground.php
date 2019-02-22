@@ -5,10 +5,10 @@ declare(strict_types=1);
 return [
     /*
     |--------------------------------------------------------------------------
-    | GraphQL endpoint
+    | GraphQL Playground endpoint
     |--------------------------------------------------------------------------
     |
-    | Set the endpoint to which the GraphQL Playground  responds.
+    | Set the endpoint to which the GraphQL Playground responds.
     | The default route endpoint is "yourdomain.com/graphql-playground".
     |
     */
@@ -25,7 +25,7 @@ return [
     */
 
     'route' => [
-        'prefix' => '',
+        // 'prefix' => '',
         // 'middleware' => ['web']
     ],
 
