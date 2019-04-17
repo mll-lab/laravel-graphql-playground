@@ -31,9 +31,36 @@ You may publish the configuration and/or the views:
 ## Usage
 
 By default, the playground is reachable at `/graphql-playground`
+and assumes a running GraphQL endpoint at `/graphql`.
 
-It assumes a running GraphQL endpoint at `/graphql`. You can enter another URL in the
-UI or change the default setting in the configuration file.
+If your endpoint is located somewhere else, you can change the setting
+in the published `config/graphql-playground.php`:
+
+```php
+    'endpoint' => 'any-url.com/route',
+```
+
+If you want to change arbitrary options of the UI, you can publish the view
+and add [possible settings to the playground instance](https://github.com/prisma/graphql-playground#properties),
+for example:
+
+```php
+<div id="root" />
+<script type="text/javascript">
+  window.addEventListener('load', function (event) {
+    const loadingWrapper = document.getElementById('loading-wrapper');
+    loadingWrapper.classList.add('fadeOut');
+    const root = document.getElementById('root');
+    root.classList.add('playgroundIn');
+    GraphQLPlayground.init(root, {
+      endpoint: "{{url(config('graphql-playground.endpoint'))}}",
+      settings: {
+        'request.credentials': 'same-origin',
+      },
+    })
+  })
+</script>
+```
 
 ### Local assets
 
