@@ -48,7 +48,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Control Playground availibility
+    | Control Playground availability
     |--------------------------------------------------------------------------
     |
     | Control if the playground is accessible at all.
