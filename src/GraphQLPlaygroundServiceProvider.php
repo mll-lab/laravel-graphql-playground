@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace MLL\GraphQLPlayground;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Route;
 
 class GraphQLPlaygroundServiceProvider extends ServiceProvider
 {
@@ -32,10 +33,10 @@ class GraphQLPlaygroundServiceProvider extends ServiceProvider
             return;
         }
 
-        \Route::group(
+        Route::group(
             config('graphql-playground.route'),
             function (): void {
-                \Route::get(
+                Route::get(
                     config('graphql-playground.route_name', 'graphql-playground'),
                     GraphQLPlaygroundController::class.'@get'
                 )->name('graphql-playground');
