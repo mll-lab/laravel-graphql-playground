@@ -34,7 +34,7 @@ class GraphQLPlaygroundServiceProvider extends ServiceProvider
         }
 
         Route::group(
-            config('graphql-playground.route'),
+            [config('graphql-playground.route')],
             function (): void {
                 Route::get(
                     config('graphql-playground.route_name', 'graphql-playground'),
