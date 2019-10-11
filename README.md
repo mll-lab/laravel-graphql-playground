@@ -24,14 +24,14 @@ If you are using Laravel < 5.4, add the service provider to your `config/app.php
 ]
 ```
 
-You may publish the configuration and/or the views:
-
-    php artisan vendor:publish --provider="MLL\GraphQLPlayground\GraphQLPlaygroundServiceProvider"
-
-## Usage
+## Configuration
 
 By default, the playground is reachable at `/graphql-playground`
 and assumes a running GraphQL endpoint at `/graphql`.
+
+To change the defaults, publish the configuration with the following command:
+
+    php artisan vendor:publish --provider="MLL\GraphQLPlayground\GraphQLPlaygroundServiceProvider" --tag=config
 
 If your endpoint is located somewhere else, you can change the setting
 in the published `config/graphql-playground.php`:
@@ -40,8 +40,11 @@ in the published `config/graphql-playground.php`:
     'endpoint' => 'any-url.com/route',
 ```
 
-If you want to change arbitrary options of the UI, you can publish the view
-and add [possible settings to the playground instance](https://github.com/prisma/graphql-playground#properties),
+If you want to change arbitrary options of the UI, you can publish the view:
+
+    php artisan vendor:publish --provider="MLL\GraphQLPlayground\GraphQLPlaygroundServiceProvider" --tag=views
+
+You may add [possible settings to the playground instance](https://github.com/prisma/graphql-playground#properties),
 for example:
 
 ```php
