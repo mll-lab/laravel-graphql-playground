@@ -40,12 +40,17 @@ in the published `config/graphql-playground.php`:
     'endpoint' => 'any-url.com/route',
 ```
 
-If you want to change arbitrary options of the UI, you can publish the view:
+## Customization
+
+To customize the Playground even further, publish the view:
 
     php artisan vendor:publish --provider="MLL\GraphQLPlayground\GraphQLPlaygroundServiceProvider" --tag=views
 
-You may add [possible settings to the playground instance](https://github.com/prisma/graphql-playground#properties),
-for example:
+You can use that for all kinds of customization.
+
+### Change settings of the playground instance
+
+Check https://github.com/prisma/graphql-playground#properties for the allowed config options, for example:
 
 ```php
 <div id="root" />
@@ -65,7 +70,29 @@ for example:
 </script>
 ```
 
-### Local assets
+### Configure session authentication
+
+If you use GraphQL through sessions and CSRF, add the following to the header:
+
+```php
+<meta name="csrf-token" content="{{ csrf_token() }}">
+```
+
+Modify the Playground config like so:
+
+```diff
+GraphQLPlayground.init(root, {
+  endpoint: "{{url(config('graphql-playground.endpoint'))}}",
+  settings: {
+    'request.credentials': 'same-origin',
+  },
++ headers: {
++   'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
++ }
+})
+```
+
+## Local assets
 
 If you want to serve the assets from your own server, you can download them with the command
 
