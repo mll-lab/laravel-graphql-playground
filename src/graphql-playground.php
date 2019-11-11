@@ -11,16 +11,14 @@ return [
     | Set the URI at which the GraphQL Playground can be viewed
     | and any additional configuration for the route.
     |
-    | For domain config it could be something like:
-    | 'domain' => 'graphql.' . env('APP_DOMAIN', 'localhost'),
-    |
     */
 
     'route' => [
         'uri' => '/graphql-playground',
-        // 'prefix' => '',
+        'name' => 'graphql-playground',
         // 'middleware' => ['web']
-        'domain' => env('GRAPHQL_PLAYGROUND_DOMAIN', null),
+        // 'prefix' => '',
+        // 'domain' => 'graphql.' . env('APP_DOMAIN', 'localhost'),
     ],
 
     /*
