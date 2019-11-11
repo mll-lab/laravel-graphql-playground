@@ -10,23 +10,23 @@
     <link rel="stylesheet"
           href="{{
             file_exists(public_path(\MLL\GraphQLPlayground\DownloadAssetsCommand::CSS_PATH_LOCAL))
-            ? asset(\MLL\GraphQLPlayground\DownloadAssetsCommand::CSS_PATH_LOCAL)
-            : \MLL\GraphQLPlayground\DownloadAssetsCommand::CSS_PATH_CDN
+                ? asset(\MLL\GraphQLPlayground\DownloadAssetsCommand::CSS_PATH_LOCAL)
+                : \MLL\GraphQLPlayground\DownloadAssetsCommand::CSS_PATH_CDN
           }}"
     />
 
     <link rel="shortcut icon"
           href="{{
             file_exists(public_path(\MLL\GraphQLPlayground\DownloadAssetsCommand::FAVICON_PATH_LOCAL))
-            ? asset(\MLL\GraphQLPlayground\DownloadAssetsCommand::FAVICON_PATH_LOCAL)
-            : \MLL\GraphQLPlayground\DownloadAssetsCommand::FAVICON_PATH_CDN
+                ? asset(\MLL\GraphQLPlayground\DownloadAssetsCommand::FAVICON_PATH_LOCAL)
+                : \MLL\GraphQLPlayground\DownloadAssetsCommand::FAVICON_PATH_CDN
           }}"
     />
 
     <script src="{{
                 file_exists(public_path(\MLL\GraphQLPlayground\DownloadAssetsCommand::JS_PATH_LOCAL))
-                ? asset(\MLL\GraphQLPlayground\DownloadAssetsCommand::JS_PATH_LOCAL)
-                : \MLL\GraphQLPlayground\DownloadAssetsCommand::JS_PATH_CDN
+                    ? asset(\MLL\GraphQLPlayground\DownloadAssetsCommand::JS_PATH_LOCAL)
+                    : \MLL\GraphQLPlayground\DownloadAssetsCommand::JS_PATH_CDN
             }}"
     ></script>
 
@@ -38,14 +38,17 @@
         font-family: "Open Sans", sans-serif;
         overflow: hidden;
     }
+
     body {
         margin: 0;
         background: #172a3a;
     }
+
     .playgroundIn {
         -webkit-animation: playgroundIn 0.5s ease-out forwards;
         animation: playgroundIn 0.5s ease-out forwards;
     }
+
     @-webkit-keyframes playgroundIn {
         from {
             opacity: 0;
@@ -60,6 +63,7 @@
             transform: translateY(0);
         }
     }
+
     @keyframes playgroundIn {
         from {
             opacity: 0;
@@ -81,6 +85,7 @@
         -webkit-animation: fadeOut 0.5s ease-out forwards;
         animation: fadeOut 0.5s ease-out forwards;
     }
+
     @-webkit-keyframes fadeIn {
         from {
             opacity: 0;
@@ -95,6 +100,7 @@
             transform: translateY(0);
         }
     }
+
     @keyframes fadeIn {
         from {
             opacity: 0;
@@ -109,6 +115,7 @@
             transform: translateY(0);
         }
     }
+
     @-webkit-keyframes fadeOut {
         from {
             opacity: 1;
@@ -123,6 +130,7 @@
             transform: translateY(-10px);
         }
     }
+
     @keyframes fadeOut {
         from {
             opacity: 1;
@@ -137,6 +145,7 @@
             transform: translateY(-10px);
         }
     }
+
     @-webkit-keyframes appearIn {
         from {
             opacity: 0;
@@ -151,6 +160,7 @@
             transform: translateY(0);
         }
     }
+
     @keyframes appearIn {
         from {
             opacity: 0;
@@ -165,6 +175,7 @@
             transform: translateY(0);
         }
     }
+
     @-webkit-keyframes scaleIn {
         from {
             -webkit-transform: scale(0);
@@ -177,6 +188,7 @@
             transform: scale(1);
         }
     }
+
     @keyframes scaleIn {
         from {
             -webkit-transform: scale(0);
@@ -189,6 +201,7 @@
             transform: scale(1);
         }
     }
+
     @-webkit-keyframes innerDrawIn {
         0% {
             stroke-dashoffset: 70;
@@ -200,6 +213,7 @@
             stroke-dashoffset: 210;
         }
     }
+
     @keyframes innerDrawIn {
         0% {
             stroke-dashoffset: 70;
@@ -211,6 +225,7 @@
             stroke-dashoffset: 210;
         }
     }
+
     @-webkit-keyframes outerDrawIn {
         0% {
             stroke-dashoffset: 76;
@@ -219,6 +234,7 @@
             stroke-dashoffset: 152;
         }
     }
+
     @keyframes outerDrawIn {
         0% {
             stroke-dashoffset: 76;
@@ -227,6 +243,7 @@
             stroke-dashoffset: 152;
         }
     }
+
     .hHWjkv {
         -webkit-transform-origin: 0px 0px;
         -ms-transform-origin: 0px 0px;
@@ -237,6 +254,7 @@
         -webkit-animation: scaleIn 0.25s linear forwards 0.2222222222222222s;
         animation: scaleIn 0.25s linear forwards 0.2222222222222222s;
     }
+
     .gCDOzd {
         -webkit-transform-origin: 0px 0px;
         -ms-transform-origin: 0px 0px;
@@ -247,6 +265,7 @@
         -webkit-animation: scaleIn 0.25s linear forwards 0.4222222222222222s;
         animation: scaleIn 0.25s linear forwards 0.4222222222222222s;
     }
+
     .hmCcxi {
         -webkit-transform-origin: 0px 0px;
         -ms-transform-origin: 0px 0px;
@@ -257,6 +276,7 @@
         -webkit-animation: scaleIn 0.25s linear forwards 0.6222222222222222s;
         animation: scaleIn 0.25s linear forwards 0.6222222222222222s;
     }
+
     .eHamQi {
         -webkit-transform-origin: 0px 0px;
         -ms-transform-origin: 0px 0px;
@@ -267,6 +287,7 @@
         -webkit-animation: scaleIn 0.25s linear forwards 0.8222222222222223s;
         animation: scaleIn 0.25s linear forwards 0.8222222222222223s;
     }
+
     .byhgGu {
         -webkit-transform-origin: 0px 0px;
         -ms-transform-origin: 0px 0px;
@@ -277,6 +298,7 @@
         -webkit-animation: scaleIn 0.25s linear forwards 1.0222222222222221s;
         animation: scaleIn 0.25s linear forwards 1.0222222222222221s;
     }
+
     .llAKP {
         -webkit-transform-origin: 0px 0px;
         -ms-transform-origin: 0px 0px;
@@ -287,6 +309,7 @@
         -webkit-animation: scaleIn 0.25s linear forwards 1.2222222222222223s;
         animation: scaleIn 0.25s linear forwards 1.2222222222222223s;
     }
+
     .bglIGM {
         -webkit-transform-origin: 64px 28px;
         -ms-transform-origin: 64px 28px;
@@ -297,6 +320,7 @@
         -webkit-animation: scaleIn 0.25s linear forwards 0.2222222222222222s;
         animation: scaleIn 0.25s linear forwards 0.2222222222222222s;
     }
+
     .ksxRII {
         -webkit-transform-origin: 95.98500061035156px 46.510000228881836px;
         -ms-transform-origin: 95.98500061035156px 46.510000228881836px;
@@ -307,6 +331,7 @@
         -webkit-animation: scaleIn 0.25s linear forwards 0.4222222222222222s;
         animation: scaleIn 0.25s linear forwards 0.4222222222222222s;
     }
+
     .cWrBmb {
         -webkit-transform-origin: 95.97162628173828px 83.4900016784668px;
         -ms-transform-origin: 95.97162628173828px 83.4900016784668px;
@@ -317,6 +342,7 @@
         -webkit-animation: scaleIn 0.25s linear forwards 0.6222222222222222s;
         animation: scaleIn 0.25s linear forwards 0.6222222222222222s;
     }
+
     .Wnusb {
         -webkit-transform-origin: 64px 101.97999572753906px;
         -ms-transform-origin: 64px 101.97999572753906px;
@@ -327,6 +353,7 @@
         -webkit-animation: scaleIn 0.25s linear forwards 0.8222222222222223s;
         animation: scaleIn 0.25s linear forwards 0.8222222222222223s;
     }
+
     .bfPqf {
         -webkit-transform-origin: 32.03982162475586px 83.4900016784668px;
         -ms-transform-origin: 32.03982162475586px 83.4900016784668px;
@@ -337,6 +364,7 @@
         -webkit-animation: scaleIn 0.25s linear forwards 1.0222222222222221s;
         animation: scaleIn 0.25s linear forwards 1.0222222222222221s;
     }
+
     .edRCTN {
         -webkit-transform-origin: 32.033552169799805px 46.510000228881836px;
         -ms-transform-origin: 32.033552169799805px 46.510000228881836px;
@@ -347,6 +375,7 @@
         -webkit-animation: scaleIn 0.25s linear forwards 1.2222222222222223s;
         animation: scaleIn 0.25s linear forwards 1.2222222222222223s;
     }
+
     .iEGVWn {
         opacity: 0;
         stroke-dasharray: 76;
@@ -355,6 +384,7 @@
         -webkit-animation-iteration-count: 1, 1;
         animation-iteration-count: 1, 1;
     }
+
     .bsocdx {
         opacity: 0;
         stroke-dasharray: 76;
@@ -363,6 +393,7 @@
         -webkit-animation-iteration-count: 1, 1;
         animation-iteration-count: 1, 1;
     }
+
     .jAZXmP {
         opacity: 0;
         stroke-dasharray: 76;
@@ -371,6 +402,7 @@
         -webkit-animation-iteration-count: 1, 1;
         animation-iteration-count: 1, 1;
     }
+
     .hSeArx {
         opacity: 0;
         stroke-dasharray: 76;
@@ -379,6 +411,7 @@
         -webkit-animation-iteration-count: 1, 1;
         animation-iteration-count: 1, 1;
     }
+
     .bVgqGk {
         opacity: 0;
         stroke-dasharray: 76;
@@ -387,6 +420,7 @@
         -webkit-animation-iteration-count: 1, 1;
         animation-iteration-count: 1, 1;
     }
+
     .hEFqBt {
         opacity: 0;
         stroke-dasharray: 76;
@@ -395,6 +429,7 @@
         -webkit-animation-iteration-count: 1, 1;
         animation-iteration-count: 1, 1;
     }
+
     .dzEKCM {
         opacity: 0;
         stroke-dasharray: 70;
@@ -403,6 +438,7 @@
         -webkit-animation-iteration-count: infinite, 1;
         animation-iteration-count: infinite, 1;
     }
+
     .DYnPx {
         opacity: 0;
         stroke-dasharray: 70;
@@ -411,6 +447,7 @@
         -webkit-animation-iteration-count: infinite, 1;
         animation-iteration-count: infinite, 1;
     }
+
     .hjPEAQ {
         opacity: 0;
         stroke-dasharray: 70;
@@ -419,6 +456,7 @@
         -webkit-animation-iteration-count: infinite, 1;
         animation-iteration-count: infinite, 1;
     }
+
     #loading-wrapper {
         position: absolute;
         width: 100vw;
@@ -439,6 +477,7 @@
         -ms-flex-direction: column;
         flex-direction: column;
     }
+
     .logo {
         width: 75px;
         height: 75px;
@@ -447,6 +486,7 @@
         -webkit-animation: fadeIn 0.5s ease-out forwards;
         animation: fadeIn 0.5s ease-out forwards;
     }
+
     .text {
         font-size: 32px;
         font-weight: 200;
@@ -456,6 +496,7 @@
         -webkit-animation: fadeIn 0.5s ease-out forwards;
         animation: fadeIn 0.5s ease-out forwards;
     }
+
     .dGfHfc {
         font-weight: 400;
     }
@@ -499,17 +540,19 @@
     </div>
 </div>
 
-<div id="root" />
+<div id="root"/>
 <script type="text/javascript">
-  window.addEventListener('load', function (event) {
-    const loadingWrapper = document.getElementById('loading-wrapper');
-    loadingWrapper.classList.add('fadeOut');
-    const root = document.getElementById('root');
-    root.classList.add('playgroundIn');
-    GraphQLPlayground.init(root, {
-      endpoint: "{{url(config('graphql-playground.endpoint'))}}"
+    window.addEventListener('load', function (event) {
+        const loadingWrapper = document.getElementById('loading-wrapper');
+        loadingWrapper.classList.add('fadeOut');
+
+        const root = document.getElementById('root');
+        root.classList.add('playgroundIn');
+
+        GraphQLPlayground.init(root, {
+            endpoint: "{{url(config('graphql-playground.endpoint'))}}"
+        })
     })
-  })
 </script>
 
 </body>

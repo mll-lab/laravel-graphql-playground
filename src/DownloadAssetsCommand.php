@@ -10,15 +10,18 @@ class DownloadAssetsCommand extends Command
 {
     const JS_PATH_LOCAL = 'vendor/graphql-playground/middleware.js';
     const JS_PATH_CDN = '//cdn.jsdelivr.net/npm/graphql-playground-react/build/static/js/middleware.js';
+
     const CSS_PATH_LOCAL = 'vendor/graphql-playground/index.css';
     const CSS_PATH_CDN = '//cdn.jsdelivr.net/npm/graphql-playground-react/build/static/css/index.css';
+
     const FAVICON_PATH_LOCAL = 'vendor/graphql-playground/favicon.png';
     const FAVICON_PATH_CDN = '//cdn.jsdelivr.net/npm/graphql-playground-react/build/favicon.png';
 
     protected $signature = 'graphql-playground:download-assets';
+
     protected $description = 'Download the newest version of the GraphQLPlayground assets to serve them locally.';
 
-    public function handle()
+    public function handle(): void
     {
         $this->fileForceContents(
             public_path(self::CSS_PATH_LOCAL),
@@ -34,7 +37,7 @@ class DownloadAssetsCommand extends Command
         );
     }
 
-    protected function fileForceContents(string $filePath, string $contents)
+    protected function fileForceContents(string $filePath, string $contents): void
     {
         // Ensure the directory exists
         $directory = dirname($filePath);

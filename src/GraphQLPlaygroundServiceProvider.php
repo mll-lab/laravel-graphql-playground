@@ -49,7 +49,7 @@ class GraphQLPlaygroundServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->mergeConfigFrom(self::CONFIG_PATH, 'graphql-playground');
 
