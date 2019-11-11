@@ -5,7 +5,7 @@ declare(strict_types=1);
 /** @var \Illuminate\Contracts\Config\Repository $config */
 $config = app('config');
 
-if ($routeConfig = $config->get('lighthouse.route')) {
+if ($routeConfig = $config->get('graphql-playground.route')) {
     /** @var \Illuminate\Contracts\Routing\Registrar|\Laravel\Lumen\Routing\Router $router */
     $router = app('router');
 
