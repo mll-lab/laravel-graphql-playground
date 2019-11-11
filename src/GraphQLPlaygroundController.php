@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace MLL\GraphQLPlayground;
 
-use Illuminate\Routing\Controller;
-
-class GraphQLPlaygroundController extends Controller
+class GraphQLPlaygroundController
 {
-    public function get()
+    public function __invoke()
     {
         return view('graphql-playground::index');
     }

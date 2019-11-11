@@ -4,20 +4,24 @@ declare(strict_types=1);
 
 namespace MLL\GraphQLPlayground;
 
-use Illuminate\Support\Facades\Route;
+use Illuminate\Contracts\Config\Repository as ConfigRepository;
+use Illuminate\Contracts\Routing\Registrar;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 
 class GraphQLPlaygroundServiceProvider extends ServiceProvider
 {
-    const CONFIG_PATH = __DIR__.'/../config/graphql-playground.php';
+    const CONFIG_PATH = __DIR__.'/graphql-playground.php';
     const VIEW_PATH = __DIR__.'/../views';
 
     /**
      * Perform post-registration booting of services.
      *
+     * @param  \Illuminate\Contracts\Config\Repository  $config
+     * @param  \Illuminate\Contracts\Routing\Registrar  $registrar
      * @return void
      */
-    public function boot()
+    public function boot(ConfigRepository $config, Registrar $registrar): void
     {
         $this->loadViewsFrom(self::VIEW_PATH, 'graphql-playground');
 
@@ -33,15 +37,24 @@ class GraphQLPlaygroundServiceProvider extends ServiceProvider
             return;
         }
 
-        Route::group(
-            config('graphql-playground.route'),
-            function (): void {
-                Route::get(
-                    config('graphql-playground.route_name', 'graphql-playground'),
-                    GraphQLPlaygroundController::class.'@get'
-                )->name('graphql-playground');
-            }
-        );
+        $this->loadRoutesFrom(__DIR__.'/routes.php');
+    }
+
+    /**
+     * Load routes from provided path.
+     *
+     * @param  string  $path
+     * @return void
+     */
+    protected function loadRoutesFrom($path): void
+    {
+        if (Str::contains($this->app->version(), 'Lumen')) {
+            require realpath($path);
+
+            return;
+        }
+
+        parent::loadRoutesFrom($path);
     }
 
     /**
