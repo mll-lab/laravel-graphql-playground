@@ -34,7 +34,7 @@ class GraphQLPlaygroundServiceProvider extends ServiceProvider
             self::VIEW_PATH => resource_path('views/vendor/graphql-playground'),
         ], 'views');
 
-        if (!config('graphql-playground.enabled', true)) {
+        if (!$config->get('graphql-playground.enabled', true)) {
             return;
         }
 
