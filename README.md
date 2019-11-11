@@ -33,12 +33,7 @@ To change the defaults, publish the configuration with the following command:
 
     php artisan vendor:publish --provider="MLL\GraphQLPlayground\GraphQLPlaygroundServiceProvider" --tag=config
 
-If your endpoint is located somewhere else, you can change the setting
-in the published `config/graphql-playground.php`:
-
-```php
-    'endpoint' => 'any-url.com/route',
-```
+You will find the configuration file at `config/graphql-playground.php`.
 
 ## Customization
 
