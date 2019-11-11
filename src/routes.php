@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /** @var \Illuminate\Contracts\Config\Repository $config */
 $config = app('config');
 

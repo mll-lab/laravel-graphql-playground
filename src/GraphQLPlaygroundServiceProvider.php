@@ -19,6 +19,7 @@ class GraphQLPlaygroundServiceProvider extends ServiceProvider
      *
      * @param  \Illuminate\Contracts\Config\Repository  $config
      * @param  \Illuminate\Contracts\Routing\Registrar  $registrar
+     *
      * @return void
      */
     public function boot(ConfigRepository $config, Registrar $registrar): void
@@ -44,6 +45,7 @@ class GraphQLPlaygroundServiceProvider extends ServiceProvider
      * Load routes from provided path.
      *
      * @param  string  $path
+     *
      * @return void
      */
     protected function loadRoutesFrom($path): void
