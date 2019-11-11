@@ -10,10 +10,13 @@ if ($routeConfig = $config->get('graphql-playground.route')) {
     $router = app('router');
 
     $actions = [
-        'as' => $routeConfig['name'] ?? '/graphql-playground',
+        'as' => $routeConfig['name'] ?? 'graphql-playground',
         'uses' => \MLL\GraphQLPlayground\GraphQLPlaygroundController::class,
-        'middleware' => $routeConfig['middleware'],
     ];
+
+    if (isset($routeConfig['middleware'])) {
+        $actions['middleware'] = $routeConfig['middleware'];
+    }
 
     if (isset($routeConfig['prefix'])) {
         $actions['prefix'] = $routeConfig['prefix'];
