@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace MLL\GraphQLPlayground;
 
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
-use Illuminate\Contracts\Routing\Registrar;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 
@@ -18,11 +17,10 @@ class GraphQLPlaygroundServiceProvider extends ServiceProvider
      * Perform post-registration booting of services.
      *
      * @param  \Illuminate\Contracts\Config\Repository  $config
-     * @param  \Illuminate\Contracts\Routing\Registrar  $registrar
      *
      * @return void
      */
-    public function boot(ConfigRepository $config, Registrar $registrar): void
+    public function boot(ConfigRepository $config): void
     {
         $this->loadViewsFrom(self::VIEW_PATH, 'graphql-playground');
 
