@@ -41,7 +41,7 @@ class DownloadAssetsCommand extends Command
     {
         // Ensure the directory exists
         $directory = dirname($filePath);
-        if (!is_dir($directory)) {
+        if (! is_dir($directory)) {
             mkdir($directory, 0777, true);
         }
 
