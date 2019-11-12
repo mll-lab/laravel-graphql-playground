@@ -80,6 +80,6 @@ class DownloadAssetsCommand extends Command
 
     protected static function publicPath(string $path): string
     {
-        return app()->basePath('public/' . $path);
+        return app()->basePath('public/'.$path);
     }
 }
