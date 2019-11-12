@@ -50,4 +50,36 @@ class DownloadAssetsCommand extends Command
             $contents
         );
     }
+
+    public static function jsPath(): string
+    {
+        return self::assetPath(self::JS_PATH_LOCAL, self::JS_PATH_CDN);
+    }
+
+    public static function cssPath(): string
+    {
+        return self::assetPath(self::CSS_PATH_LOCAL, self::CSS_PATH_CDN);
+    }
+
+    public static function faviconPath(): string
+    {
+        return self::assetPath(self::FAVICON_PATH_LOCAL, self::FAVICON_PATH_CDN);
+    }
+
+    protected static function assetPath(string $local, string $cdn)
+    {
+        return file_exists(self::publicPath($local))
+            ? self::asset($local)
+            : $cdn;
+    }
+
+    protected static function asset(string $path)
+    {
+        return app('url')->asset($path);
+    }
+
+    protected static function publicPath(string $path): string
+    {
+        return app()->basePath('public/' . $path);
+    }
 }

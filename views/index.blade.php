@@ -8,28 +8,12 @@
     <title>GraphQL Playground</title>
 
     <link rel="stylesheet"
-          href="{{
-            file_exists(public_path(\MLL\GraphQLPlayground\DownloadAssetsCommand::CSS_PATH_LOCAL))
-                ? asset(\MLL\GraphQLPlayground\DownloadAssetsCommand::CSS_PATH_LOCAL)
-                : \MLL\GraphQLPlayground\DownloadAssetsCommand::CSS_PATH_CDN
-          }}"
+          href="{{\MLL\GraphQLPlayground\DownloadAssetsCommand::cssPath()}}"
     />
-
     <link rel="shortcut icon"
-          href="{{
-            file_exists(public_path(\MLL\GraphQLPlayground\DownloadAssetsCommand::FAVICON_PATH_LOCAL))
-                ? asset(\MLL\GraphQLPlayground\DownloadAssetsCommand::FAVICON_PATH_LOCAL)
-                : \MLL\GraphQLPlayground\DownloadAssetsCommand::FAVICON_PATH_CDN
-          }}"
+          href="{{\MLL\GraphQLPlayground\DownloadAssetsCommand::faviconPath()}}"
     />
-
-    <script src="{{
-                file_exists(public_path(\MLL\GraphQLPlayground\DownloadAssetsCommand::JS_PATH_LOCAL))
-                    ? asset(\MLL\GraphQLPlayground\DownloadAssetsCommand::JS_PATH_LOCAL)
-                    : \MLL\GraphQLPlayground\DownloadAssetsCommand::JS_PATH_CDN
-            }}"
-    ></script>
-
+    <script src="{{\MLL\GraphQLPlayground\DownloadAssetsCommand::jsPath()}}"></script>
 </head>
 
 <body>
