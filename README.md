@@ -20,8 +20,14 @@ If you are using Laravel < 5.4, add the service provider to your `config/app.php
 ```php
 'providers' => [
     // Other providers...
-    MLL\\GraphQLPlayground\\GraphQLPlaygroundServiceProvider::class,
+    MLL\GraphQLPlayground\GraphQLPlaygroundServiceProvider::class,
 ]
+```
+
+If you are using Lumen, register the service provider in `bootstrap/app.php`
+
+```php
+$app->register(MLL\GraphQLPlayground\GraphQLPlaygroundServiceProvider::class);
 ```
 
 ## Configuration
@@ -34,6 +40,13 @@ To change the defaults, publish the configuration with the following command:
     php artisan vendor:publish --provider="MLL\GraphQLPlayground\GraphQLPlaygroundServiceProvider" --tag=config
 
 You will find the configuration file at `config/graphql-playground.php`.
+
+If you are using Lumen, copy it into that location manually and load the configuration
+in your `boostrap/app.php`:
+
+```php
+$app->configure('graphql-playground');
+```
 
 ## Customization
 
