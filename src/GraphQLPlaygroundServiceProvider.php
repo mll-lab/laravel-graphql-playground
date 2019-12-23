@@ -75,11 +75,11 @@ class GraphQLPlaygroundServiceProvider extends ServiceProvider
 
     protected function configPath(string $path): string
     {
-        return $this->app->basePath('config/' . $path);
+        return $this->app->basePath('config/'.$path);
     }
 
     protected function resourcePath(string $path): string
     {
-        return $this->app->basePath('resources/' . $path);
+        return $this->app->basePath('resources/'.$path);
     }
 }
