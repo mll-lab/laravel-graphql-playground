@@ -24,15 +24,15 @@ class DownloadAssetsCommand extends Command
     public function handle(): void
     {
         $this->fileForceContents(
-            public_path(self::CSS_PATH_LOCAL),
+            self::publicPath(self::CSS_PATH_LOCAL),
             file_get_contents('https:'.self::CSS_PATH_CDN)
         );
         $this->fileForceContents(
-            public_path(self::JS_PATH_LOCAL),
+            self::publicPath(self::JS_PATH_LOCAL),
             file_get_contents('https:'.self::JS_PATH_CDN)
         );
         $this->fileForceContents(
-            public_path(self::FAVICON_PATH_LOCAL),
+            self::publicPath(self::FAVICON_PATH_LOCAL),
             file_get_contents('https:'.self::FAVICON_PATH_CDN)
         );
     }
@@ -66,14 +66,14 @@ class DownloadAssetsCommand extends Command
         return self::assetPath(self::FAVICON_PATH_LOCAL, self::FAVICON_PATH_CDN);
     }
 
-    protected static function assetPath(string $local, string $cdn)
+    protected static function assetPath(string $local, string $cdn): string
     {
         return file_exists(self::publicPath($local))
             ? self::asset($local)
             : $cdn;
     }
 
-    protected static function asset(string $path)
+    protected static function asset(string $path): string
     {
         return app('url')->asset($path);
     }

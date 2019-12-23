@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/mll-lab/laravel-graphql-playground/compare/v2.0.1...master)
 
+### Fixed
+
+- Lumen compatibility: Do not use `public_path()` helper
+
 ## [v2.0.1](https://github.com/mll-lab/laravel-graphql-playground/compare/v2.0.0...v2.0.1)
 
 ### Fixed
