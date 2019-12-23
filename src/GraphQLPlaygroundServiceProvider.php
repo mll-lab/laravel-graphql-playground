@@ -25,11 +25,11 @@ class GraphQLPlaygroundServiceProvider extends ServiceProvider
         $this->loadViewsFrom(self::VIEW_PATH, 'graphql-playground');
 
         $this->publishes([
-            self::CONFIG_PATH => $this->app->configPath('graphql-playground.php'),
+            self::CONFIG_PATH => $this->configPath('graphql-playground.php'),
         ], 'config');
 
         $this->publishes([
-            self::VIEW_PATH => $this->app->resourcePath('views/vendor/graphql-playground'),
+            self::VIEW_PATH => $this->resourcePath('views/vendor/graphql-playground'),
         ], 'views');
 
         if (! $config->get('graphql-playground.enabled', true)) {
@@ -71,5 +71,15 @@ class GraphQLPlaygroundServiceProvider extends ServiceProvider
                 \MLL\GraphQLPlayground\DownloadAssetsCommand::class,
             ]);
         }
+    }
+
+    protected function configPath(string $path): string
+    {
+        return $this->app->basePath('config/' . $path);
+    }
+
+    protected function resourcePath(string $path): string
+    {
+        return $this->app->basePath('resources/' . $path);
     }
 }

@@ -5,7 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/mll-lab/laravel-graphql-playground/compare/v2.0.0...master)
+## [Unreleased](https://github.com/mll-lab/laravel-graphql-playground/compare/v2.0.1...master)
+
+## [v2.0.1](https://github.com/mll-lab/laravel-graphql-playground/compare/v2.0.0...v2.0.1)
+
+### Fixed
+
+- Lumen compatibility: Remove usage of unavailable path helpers
 
 ## [v2.0.0](https://github.com/mll-lab/laravel-graphql-playground/compare/v1.1.0...v2.0.0)
 
