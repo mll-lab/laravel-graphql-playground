@@ -80,6 +80,7 @@ Check https://github.com/prisma/graphql-playground#properties for the allowed co
 
 ### Configure session authentication
 
+Session based authentication can be used with [Laravel Sanctum](https://laravel.com/docs/sanctum).
 If you use GraphQL through sessions and CSRF, add the following to the header:
 
 ```php
