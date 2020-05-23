@@ -104,7 +104,6 @@ the assets downloaded, they will be used instead of the online version from the 
 ## Security
 
 If you do not want to enable the GraphQL playground in production, you can disable it in the config file.
-The easiest way is to set the environment variable `GRAPHQL_PLAYGROUND_ENABLED=false`
+The easiest way is to set the environment variable `GRAPHQL_PLAYGROUND_ENABLED=false`.
 
-If you want to add custom middleware to protect the route to the GraphQL playground, you can
-add it in the configuration file.
+If you want to protect the route to the GraphQL playground, you can add custom middleware in the config file.
