@@ -83,9 +83,9 @@ Modify the Playground config in the published view like so:
 ```diff
 GraphQLPlayground.init(root, {
   endpoint: "{{url(config('graphql-playground.endpoint'))}}",
-  settings: {
-    'request.credentials': 'same-origin',
-  },
++ settings: {
++   'request.credentials': 'same-origin',
++ },
 + headers: {
 +   'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
 + }
