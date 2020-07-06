@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## v2.2.1
+
+### Fixed
+
+- Fix loading removal by removing remaining bits
+
 ## v2.2.0
 
 ### Changed
