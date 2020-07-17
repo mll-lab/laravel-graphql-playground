@@ -28,7 +28,7 @@ and assumes a running GraphQL endpoint at `/graphql`.
 
 To change the defaults, publish the configuration with the following command:
 
-    php artisan vendor:publish --provider="MLL\GraphQLPlayground\GraphQLPlaygroundServiceProvider" --tag=config
+    php artisan vendor:publish --tag=graphql-playground-config
 
 You will find the configuration file at `config/graphql-playground.php`.
 
@@ -43,7 +43,7 @@ $app->configure('graphql-playground');
 
 To customize the Playground even further, publish the view:
 
-    php artisan vendor:publish --provider="MLL\GraphQLPlayground\GraphQLPlaygroundServiceProvider" --tag=views
+    php artisan vendor:publish --tag=graphql-playground-views
 
 You can use that for all kinds of customization.
 

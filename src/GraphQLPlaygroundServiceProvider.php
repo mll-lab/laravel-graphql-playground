@@ -26,11 +26,11 @@ class GraphQLPlaygroundServiceProvider extends ServiceProvider
 
         $this->publishes([
             self::CONFIG_PATH => $this->configPath('graphql-playground.php'),
-        ], 'config');
+        ], 'graphql-playground-config');
 
         $this->publishes([
             self::VIEW_PATH => $this->resourcePath('views/vendor/graphql-playground'),
-        ], 'views');
+        ], 'graphql-playground-view');
 
         if (! $config->get('graphql-playground.enabled', true)) {
             return;
