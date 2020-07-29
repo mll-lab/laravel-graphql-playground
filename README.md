@@ -43,7 +43,7 @@ $app->configure('graphql-playground');
 
 To customize the Playground even further, publish the view:
 
-    php artisan vendor:publish --tag=graphql-playground-views
+    php artisan vendor:publish --tag=graphql-playground-view
 
 You can use that for all kinds of customization.
 
