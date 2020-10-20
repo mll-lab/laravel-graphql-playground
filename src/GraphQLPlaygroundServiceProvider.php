@@ -43,10 +43,11 @@ class GraphQLPlaygroundServiceProvider extends ServiceProvider
      * Load routes from provided path.
      *
      * @param  string  $path
+     * @param  array  $attributes
      *
      * @return void
      */
-    protected function loadRoutesFrom($path): void
+    protected function loadRoutesFrom($path, array $attributes = []): void
     {
         if (Str::contains($this->app->version(), 'Lumen')) {
             require realpath($path);
@@ -54,7 +55,7 @@ class GraphQLPlaygroundServiceProvider extends ServiceProvider
             return;
         }
 
-        parent::loadRoutesFrom($path);
+        parent::loadRoutesFrom($path, $attributes);
     }
 
     /**
