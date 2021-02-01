@@ -36,6 +36,20 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Subscription endpoint
+    |--------------------------------------------------------------------------
+    |
+    | The default subscription endpoint Playground UI uses to connect to.
+    | Tries to connect to the `endpoint` value if `null` as ws://{{endpoint}}
+    |
+    | Example: `ws://your-endpoint` or `wss://your-endpoint`
+    |
+    */
+
+    'subscriptionEndpoint' => env('GRAPHQL_PLAYGROUND_SUBSCRIPTION_ENDPOINT', null),
+
+    /*
+    |--------------------------------------------------------------------------
     | Control Playground availability
     |--------------------------------------------------------------------------
     |

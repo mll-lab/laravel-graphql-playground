@@ -24,7 +24,8 @@
         const root = document.getElementById('root');
 
         GraphQLPlayground.init(root, {
-            endpoint: "{{url(config('graphql-playground.endpoint'))}}"
+            endpoint: "{{url(config('graphql-playground.endpoint'))}}",
+            subscriptionEndpoint: "{{config('graphql-playground.subscriptionEndpoint')}}",
         })
     })
 </script>
