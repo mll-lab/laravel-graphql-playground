@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Configure subscription endpoint through `graphql-playground.php` https://github.com/mll-lab/laravel-graphql-playground/pull/48
+- Support PHP 8
 
 ## v2.4.0
 
