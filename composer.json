@@ -1,4 +1,5 @@
 {
+  
   "name": "mll-lab/laravel-graphql-playground",
   "description": "Easily integrate GraphQL Playground into your Laravel project",
   "keywords": [
