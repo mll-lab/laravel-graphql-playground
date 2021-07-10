@@ -79,7 +79,17 @@ If you use GraphQL through sessions and CSRF, add the following to the `<head>`:
 <meta name="csrf-token" content="{{ csrf_token() }}">
 ```
 
-Modify the Playground config in the published view like so:
+Then modify `config/graphql-playground.php` with the following:
+
+```diff
+    'route' => [
+        'uri' => '/graphql-playground',
+        'name' => 'graphql-playground',
++        'middleware' => ['web']
+    ]
+```
+
+Next, modify the Playground config in the published view like so:
 
 ```diff
 GraphQLPlayground.init(root, {
