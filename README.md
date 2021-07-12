@@ -73,13 +73,15 @@ Check https://github.com/prisma/graphql-playground#properties for the allowed co
 ### Configure session authentication
 
 Session based authentication can be used with [Laravel Sanctum](https://laravel.com/docs/sanctum).
-If you use GraphQL through sessions and CSRF, add the following to the `<head>`:
+If you use GraphQL through sessions and CSRF, add the following to the `<head>`
+in the published view:
 
 ```php
 <meta name="csrf-token" content="{{ csrf_token() }}">
 ```
 
-Modify the Playground config in the published view like so:
+
+Modify the Playground config:
 
 ```diff
 GraphQLPlayground.init(root, {
@@ -93,6 +95,15 @@ GraphQLPlayground.init(root, {
 })
 ```
 
+Make sure your route includes the `web` middleware group in `config/graphql-playground.php`:
+
+```diff
+    'route' => [
+        'uri' => '/graphql-playground',
+        'name' => 'graphql-playground',
++       'middleware' => ['web']
+    ]
+```
 ## Local assets
 
 If you want to serve the assets from your own server, you can download them with the command
