@@ -1,12 +1,8 @@
-### Composer
+# Generated
 vendor
 composer.lock
+.php-cs-fixer.cache
 
-### Visual Studio Code
-/.vscode/
-
-### PhpStorm
+# IDE
+.vscode/
 .idea/
-
-### PHP Coding Style Fixer
-/.php_cs.cache

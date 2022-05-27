@@ -5,7 +5,6 @@ Easily integrate [GraphQL Playground](https://github.com/prismagraphql/graphql-p
 [![GitHub license](https://img.shields.io/github/license/mll-lab/laravel-graphql-playground.svg)](https://github.com/mll-lab/laravel-graphql-playground/blob/master/LICENSE)
 [![Packagist](https://img.shields.io/packagist/v/mll-lab/laravel-graphql-playground.svg)](https://packagist.org/packages/mll-lab/laravel-graphql-playground)
 [![Packagist](https://img.shields.io/packagist/dt/mll-lab/laravel-graphql-playground.svg)](https://packagist.org/packages/mll-lab/laravel-graphql-playground)
-[![StyleCI](https://github.styleci.io/repos/137498251/shield?branch=master)](https://github.styleci.io/repos/137498251)
 
 [![](https://i.imgur.com/AE5W6OW.png)](https://www.graphqlbin.com/RVIn)
 

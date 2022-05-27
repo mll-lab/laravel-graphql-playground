@@ -1,6 +1,4 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace MLL\GraphQLPlayground;
 
@@ -8,14 +6,14 @@ use Illuminate\Console\Command;
 
 class DownloadAssetsCommand extends Command
 {
-    const JS_PATH_LOCAL = 'vendor/graphql-playground/middleware.js';
-    const JS_PATH_CDN = '//cdn.jsdelivr.net/npm/graphql-playground-react/build/static/js/middleware.js';
+    public const JS_PATH_LOCAL = 'vendor/graphql-playground/middleware.js';
+    public const JS_PATH_CDN = '//cdn.jsdelivr.net/npm/graphql-playground-react/build/static/js/middleware.js';
 
-    const CSS_PATH_LOCAL = 'vendor/graphql-playground/index.css';
-    const CSS_PATH_CDN = '//cdn.jsdelivr.net/npm/graphql-playground-react/build/static/css/index.css';
+    public const CSS_PATH_LOCAL = 'vendor/graphql-playground/index.css';
+    public const CSS_PATH_CDN = '//cdn.jsdelivr.net/npm/graphql-playground-react/build/static/css/index.css';
 
-    const FAVICON_PATH_LOCAL = 'vendor/graphql-playground/favicon.png';
-    const FAVICON_PATH_CDN = '//cdn.jsdelivr.net/npm/graphql-playground-react/build/favicon.png';
+    public const FAVICON_PATH_LOCAL = 'vendor/graphql-playground/favicon.png';
+    public const FAVICON_PATH_CDN = '//cdn.jsdelivr.net/npm/graphql-playground-react/build/favicon.png';
 
     protected $signature = 'graphql-playground:download-assets';
 
@@ -25,15 +23,15 @@ class DownloadAssetsCommand extends Command
     {
         $this->fileForceContents(
             self::publicPath(self::CSS_PATH_LOCAL),
-            file_get_contents('https:'.self::CSS_PATH_CDN)
+            file_get_contents('https:' . self::CSS_PATH_CDN)
         );
         $this->fileForceContents(
             self::publicPath(self::JS_PATH_LOCAL),
-            file_get_contents('https:'.self::JS_PATH_CDN)
+            file_get_contents('https:' . self::JS_PATH_CDN)
         );
         $this->fileForceContents(
             self::publicPath(self::FAVICON_PATH_LOCAL),
-            file_get_contents('https:'.self::FAVICON_PATH_CDN)
+            file_get_contents('https:' . self::FAVICON_PATH_CDN)
         );
     }
 
@@ -80,6 +78,6 @@ class DownloadAssetsCommand extends Command
 
     protected static function publicPath(string $path): string
     {
-        return app()->basePath('public/'.$path);
+        return app()->basePath("public/{$path}");
     }
 }

@@ -1,6 +1,4 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace MLL\GraphQLPlayground;
 
@@ -10,15 +8,9 @@ use Illuminate\Support\Str;
 
 class GraphQLPlaygroundServiceProvider extends ServiceProvider
 {
-    const CONFIG_PATH = __DIR__.'/graphql-playground.php';
-    const VIEW_PATH = __DIR__.'/../views';
+    public const CONFIG_PATH = __DIR__ . '/graphql-playground.php';
+    public const VIEW_PATH = __DIR__ . '/../views';
 
-    /**
-     * Perform post-registration booting of services.
-     *
-     * @param  \Illuminate\Contracts\Config\Repository  $config
-     * @return void
-     */
     public function boot(ConfigRepository $config): void
     {
         $this->loadViewsFrom(self::VIEW_PATH, 'graphql-playground');
@@ -35,15 +27,9 @@ class GraphQLPlaygroundServiceProvider extends ServiceProvider
             return;
         }
 
-        $this->loadRoutesFrom(__DIR__.'/routes.php');
+        $this->loadRoutesFrom(__DIR__ . '/routes.php');
     }
 
-    /**
-     * Load routes from provided path.
-     *
-     * @param  string  $path
-     * @return void
-     */
     protected function loadRoutesFrom($path): void
     {
         if (Str::contains($this->app->version(), 'Lumen')) {
@@ -55,29 +41,24 @@ class GraphQLPlaygroundServiceProvider extends ServiceProvider
         parent::loadRoutesFrom($path);
     }
 
-    /**
-     * Register bindings in the container.
-     *
-     * @return void
-     */
     public function register(): void
     {
         $this->mergeConfigFrom(self::CONFIG_PATH, 'graphql-playground');
 
         if ($this->app->runningInConsole()) {
             $this->commands([
-                \MLL\GraphQLPlayground\DownloadAssetsCommand::class,
+                DownloadAssetsCommand::class,
             ]);
         }
     }
 
     protected function configPath(string $path): string
     {
-        return $this->app->basePath('config/'.$path);
+        return $this->app->basePath("config/{$path}");
     }
 
     protected function resourcePath(string $path): string
     {
-        return $this->app->basePath('resources/'.$path);
+        return $this->app->basePath("resources/{$path}");
     }
 }
