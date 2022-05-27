@@ -32,11 +32,25 @@ To change the defaults, publish the configuration with the following command:
 
 You will find the configuration file at `config/graphql-playground.php`.
 
+### Lumen
+
 If you are using Lumen, copy it into that location manually and load the configuration
 in your `boostrap/app.php`:
 
 ```php
 $app->configure('graphql-playground');
+```
+
+### HTTPS behind proxy
+
+If your application sits behind a proxy which resolves https, the generated URL for the endpoint
+will not be using `https://`, thus causing the Playground to not work by default. In order to solve
+this, add the following to the `boot()` method of a service provider:
+
+```php
+if (! $this->app->isLocal()) {
+    \Illuminate\Support\Facades\URL::forceScheme('https');
+}
 ```
 
 ## Customization
@@ -49,42 +63,31 @@ You can use that for all kinds of customization.
 
 ### Change settings of the playground instance
 
-Check https://github.com/prisma/graphql-playground#properties for the allowed config options, for example:
+Add extra settings in the call to `GraphQLPlayground.init` in the published view:
 
-```php
-<div id="root" />
-<script type="text/javascript">
-  window.addEventListener('load', function (event) {
-    const loadingWrapper = document.getElementById('loading-wrapper');
-    loadingWrapper.classList.add('fadeOut');
-    const root = document.getElementById('root');
-    root.classList.add('playgroundIn');
-    GraphQLPlayground.init(root, {
-      endpoint: "{{url(config('graphql-playground.endpoint'))}}",
-      settings: {
-        'request.credentials': 'same-origin',
-      },
-    })
-  })
-</script>
+```js
+GraphQLPlayground.init(document.getElementById('root'), {
+  endpoint: "{{ url(config('graphql-playground.endpoint')) }}",
+  subscriptionEndpoint: "{{ config('graphql-playground.subscriptionEndpoint') }}",
+  // See https://github.com/graphql/graphql-playground#properties for available settings
+})
 ```
 
 ### Configure session authentication
 
 Session based authentication can be used with [Laravel Sanctum](https://laravel.com/docs/sanctum).
-If you use GraphQL through sessions and CSRF, add the following to the `<head>`
-in the published view:
+If you use GraphQL through sessions and CSRF, add the following to the `<head>` in the published view:
 
 ```php
 <meta name="csrf-token" content="{{ csrf_token() }}">
 ```
 
-
 Modify the Playground config:
 
 ```diff
-GraphQLPlayground.init(root, {
-  endpoint: "{{url(config('graphql-playground.endpoint'))}}",
+GraphQLPlayground.init(document.getElementById('root'), {
+  endpoint: "{{ url(config('graphql-playground.endpoint')) }}",
+  subscriptionEndpoint: "{{ config('graphql-playground.subscriptionEndpoint') }}",
 + settings: {
 +   'request.credentials': 'same-origin',
 + },

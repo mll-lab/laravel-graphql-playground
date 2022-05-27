@@ -16,10 +16,8 @@
 
 <div id="root"/>
 <script type="text/javascript">
-    window.addEventListener('load', function () {
-        const root = document.getElementById('root');
-
-        GraphQLPlayground.init(root, {
+    window.addEventListener('load', () => {
+        GraphQLPlayground.init(document.getElementById('root'), {
             endpoint: "{{ url(config('graphql-playground.endpoint')) }}",
             subscriptionEndpoint: "{{ config('graphql-playground.subscriptionEndpoint') }}",
         })
