@@ -44,14 +44,9 @@ $app->configure('graphql-playground');
 ### HTTPS behind proxy
 
 If your application sits behind a proxy which resolves https, the generated URL for the endpoint
-will not be using `https://`, thus causing the Playground to not work by default. In order to solve
-this, add the following to the `boot()` method of a service provider:
-
-```php
-if (! $this->app->isLocal()) {
-    \Illuminate\Support\Facades\URL::forceScheme('https');
-}
-```
+might not use `https://`, thus causing the Playground to not work by default. In order to solve
+this, configure your `TrustProxies` middleware to contain `\Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_FOR`
+in `$headers`.
 
 ## Customization
 
