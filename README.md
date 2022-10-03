@@ -85,9 +85,9 @@ GraphQLPlayground.init(document.getElementById('root'), {
   subscriptionEndpoint: "{{ config('graphql-playground.subscriptionEndpoint') }}",
 + settings: {
 +   'request.credentials': 'same-origin',
-+ },
-+ headers: {
-+   'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
++   'request.globalHeaders': {
++     'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
++   }
 + }
 })
 ```
