@@ -1,5 +1,9 @@
 # Laravel GraphQL Playground
 
+## Deprecated
+
+This project is deprecated in favor of https://github.com/mll-lab/laravel-graphiql.
+
 Easily integrate [GraphQL Playground](https://github.com/prismagraphql/graphql-playground) into your Laravel projects.
 
 [![GitHub license](https://img.shields.io/github/license/mll-lab/laravel-graphql-playground.svg)](https://github.com/mll-lab/laravel-graphql-playground/blob/master/LICENSE)
